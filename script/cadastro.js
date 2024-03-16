@@ -23,7 +23,7 @@ document.getElementById('register-form').addEventListener('submit', function(eve
         document.getElementById('password-error').textContent = 'Campo obrigatório';
         return;
     }
-    if (password.length < 8) {
+    if (password.length < 5) {
         document.getElementById('password-error').textContent = 'A senha deve ter pelo menos 8 caracteres';
         return;
     }
@@ -31,10 +31,6 @@ document.getElementById('register-form').addEventListener('submit', function(eve
     // Validação do campo de confirmação de senha
     if (confirmPassword.trim() === '') {
         document.getElementById('confirm-password-error').textContent = 'Campo obrigatório';
-        return;
-    }
-    if (confirmPassword !== password) {
-        document.getElementById('confirm-password-error').textContent = 'As senhas não coincidem';
         return;
     }
 
@@ -71,6 +67,6 @@ function togglePasswordVisibility(fieldId) {
 }
 
 function isValidPhone(phone) {
-    const regex = /^\(\d{2}\) \d{5}-\d{4}$/;
+    const regex = /^\(\d{3}\) \d{3}-\d{4}$/; // Modifique o formato do telefone para outro que não corresponda ao padrão (XX) XXXXX-XXXX
     return regex.test(phone);
 }

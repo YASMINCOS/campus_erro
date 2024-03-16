@@ -4,7 +4,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const password = document.getElementById('password').value.trim();
 
     // Caso 1: Login bem-sucedido com usuário e senha corretos
-    if (username === 'john_doe' && password === 'Test@1234') { 
+    if (username === 'john_doe' && (password === 'Test@1234' ||password === 'test@1234' ) ) { 
         document.getElementById('success-container').style.display = 'flex';
         setTimeout(function() {
             window.location.href = 'https://yasmincos.github.io/SOMOS_TECH/';
@@ -26,10 +26,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     else if (username === '' || password === '') {
         document.getElementById('error-message').textContent = 'Por favor, preencha todos os campos.';
     }
-    // Casos 8 a 12: Outros cenários
-    else {
-        document.getElementById('error-message').textContent = 'Usuário ou senha inválidos.';
-    }
+
 });
 
 function togglePasswordVisibility(fieldId) {
